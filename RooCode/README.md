@@ -1,3 +1,5 @@
+# Instructions
+
 Copy folder .roo 
 into vscode project 
 install Extension RooCode

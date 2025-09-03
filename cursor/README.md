@@ -1,3 +1,5 @@
+# Instructions
+
 Copy folder .cursor 
 into cursor project IDE
 open chat window 
