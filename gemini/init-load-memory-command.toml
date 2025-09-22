@@ -1,3 +1,14 @@
+
+description = "Crea una copia local del comando 'load-memory.toml' en el directorio '.gemini/commands' del proyecto actual."
+tool = "write_file"
+
+[parameters]
+    # La ruta de destino es dinámica, dentro del proyecto actual.
+    # Asume que la carpeta .gemini/commands ya existe.
+    file_path = "{{project_root}}/.gemini/commands/load-memory.toml"
+
+    # El contenido es el texto literal del comando que queremos clonar.
+    content = '''
 description="inicializa el banco de memoria local del proyecto."
 tool = "gemini_prompt"
 
@@ -119,3 +130,4 @@ Note: When triggered by **update memory bank**, I MUST review every memory bank 
 
 REMEMBER: After every memory reset, I begin completely fresh. The Memory Bank is my only link to previous work. It must be maintained with precision and clarity, as my effectiveness depends entirely on its accuracy.
 """
+'''
