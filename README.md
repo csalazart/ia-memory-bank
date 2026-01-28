@@ -12,7 +12,6 @@ Este repositorio reúne plantillas e instrucciones para inicializar un **Memory 
 | `cline/` | Extensión Cline (VS Code) | `memory-bank.md`, `README.md` | Copiar las instrucciones de `memory-bank.md` en las custom instructions o `.clinerules` y pedir "initialize memory bank". |
 | `RooCode/` | Extensión RooCode (VS Code) | `.roo/`, `README.md` | Copiar la carpeta `.roo/`, instalar la extensión y en el chat ejecutar `init memory`. |
 | `cursor/` | Cursor IDE | `.cursor/`, `README.md` | Copiar `.cursor/` al proyecto, abrir el chat y ejecutar `init memory`. |
-| `.windsurf/` (raíz) | Motor común | Reglas core y workflows aplicados por defecto al proyecto | Se mantiene en el repositorio raíz como referencia y puede reutilizarse si se desea configurar Windsurf directamente desde aquí. |
 
 ## Flujo general de uso
 1. **Clona o descarga** este repositorio junto con tu proyecto.
