@@ -1,0 +1,24 @@
+{
+  "context": {
+    "fileName": "GEMINI.md"
+  },
+  "mcpServers": {
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "YOUR_CONTEXT7_API_KEY_HERE"
+      }
+    },
+    "nuxt": {
+      "url": "https://mcp.nuxt.com/sse"
+    }
+  },
+  "security": {
+    "folderTrust": {
+      "enabled": true
+    }
+  },
+  "ide": {
+    "enabled": true
+  }
+}

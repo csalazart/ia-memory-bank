@@ -1,33 +1,64 @@
-# Instructions
+# Instructions - Gemini CLI
 
-## FOR GEMINI code asistant gemini-cli 
+## Configuración rápida
 
-copy content of file memory-bank.md
+1. **Copiar carpeta `.gemini`** en la raíz de tu proyecto
+2. **Abrir Gemini CLI** en tu terminal
+3. **En Gemini**, escribir: `/load-memory` o indicar que lea `GEMINI.md`
+4. **¡Listo!** Gemini cargará automáticamente las reglas y memory-bank
 
-### 1. LOCAL PROJECT
+## ¿Qué hace esto?
 
- init code asistant gemini its create a GEMINI.md FILE
- copy content of memory-bank.toml and paste in first of all content
- or you can add a line "Read first memory-bank.md and follow steps"
+La carpeta `.gemini/` contiene:
+- **GEMINI.md** - Reglas de comportamiento, modos Plan/Act/Tutor, MCP servers y convenciones
+- **settings.json** - Configuración de MCP servers (context7, nuxt) y preferencias globales
+- **commands/** - Slash commands personalizados (opcional)
 
-### 2. LOCAL WITH COMANDS
+## Modos de operación
 
-in your local project folder create or open a .gemini\commands folder 
-copy memory-bank.toml and done you can rename file like load-memory.toml 
-you need edit the file and add at first line the command config 
+- **PLAN** (por defecto) - Gemini genera un plan antes de ejecutar
+- **ACT** - Ejecuta el plan aprobado (escribe "ACT" para activar)
+- **TUTOR** - Modo educativo paso a paso (escribe "TUTOR:" en el prompt)
 
-and type in your code asist /load-memory and its create a local memory-bank folder with all data
-about yout project
-Like optional **You can create a global command follow the same step but in the global user folder 
-like bellow 
+## Opciones de instalación
 
+### Opción 1: LOCAL PROJECT (Recomendado)
+1. Copiar la carpeta `.gemini/` al proyecto
+2. Inicializar Gemini: `gemini init`
+3. Gemini cargará automáticamente `GEMINI.md` como contexto global
 
-### 3. GLOBAL for ALL Projects 
+### Opción 2: LOCAL WITH COMMANDS
+1. Crear/abrir `.gemini/commands/` en el proyecto
+2. Copiar archivos `.toml` (load-memory.toml, etc.)
+3. Ejecutar `/load-memory` en Gemini para cargar memory-bank
 
-go to yout folders user
-windows: c:\users\USUARIO\.gemini
-linux / mac : ~/.gemini 
+### Opción 3: GLOBAL (Todos los proyectos)
+1. Ir a carpeta global:
+   - **Windows:** `c:\users\USUARIO\.gemini`
+   - **Linux/Mac:** `~/.gemini`
+2. Copiar `GEMINI.md` en esa carpeta
+3. Gemini leerá automáticamente el archivo en cada sesión
 
-open or create GEMINI.md and paste content of file memory-bank.md inside
-and DONE!
-each time run gemini cli code asistant its READ GEMINI.md on main folder
+## Archivos incluidos
+
+- **GEMINI.md** - Configuración principal y reglas de comportamiento
+- **settings.json** - MCP servers y configuración de IDE
+- **load-memory.toml** - Comando para cargar memory-bank (opcional)
+- **init-load-memory-command.toml** - Comando de inicialización (opcional)
+- **memory-bank.md** - Documentación del Memory Bank (ver archivo separado)
+
+## Documentación completa
+
+Ver `GEMINI.md` en la carpeta `.gemini/` para:
+- Comportamiento como compañero de trabajo
+- Integración con Memory-Bank
+- Uso de MCP servers (documentación oficial)
+- Convenciones del proyecto
+- Reglas críticas
+
+## Más información
+
+- [Memory Bank Multiplataforma](../README.md) - Guía general del repositorio
+- [Claude](../claude/) - Alternativa para Claude Code
+- [Windsurf](../windsurf/) - Alternativa para Windsurf IDE
+- [Cline](../cline/) - Alternativa para VS Code
