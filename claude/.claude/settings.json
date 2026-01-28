@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "YOUR_CONTEXT7_API_KEY_HERE"
+      },
+      "description": "Documentación oficial de múltiples tecnologías y lenguajes"
+    }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '📚 Cargando memory-bank y MCP servers (context7, nuxt, nuxt-ui)...'"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash(rm:*,del:*,DROP:*,truncate:*,DELETE:*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'BLOCKED: Comando destructivo detectado' >&2; exit 2"
+          }
+        ]
+      }
+    ]
+  }
+}
+

@@ -7,8 +7,9 @@ Este repositorio reúne plantillas e instrucciones para inicializar un **Memory 
 | Carpeta | Asistente / IDE | Archivos clave | Pasos básicos |
 | --- | --- | --- | --- |
 | `windsurf/` | Editor Windsurf | `.windsurf/rules/core.md`, `.windsurf/rules/memory-bank.md`, `README.md` | Copiar `.windsurf/` al proyecto, abrir el chat e introducir `init memory`. |
-| `gemini/` | Gemini CLI | `memory-bank.md`, `load-memory.toml`, `init-load-memory-command.toml`, `README.md` | Copiar `memory-bank.md` + el comando deseado (local o global) y ejecutar `/load-memory` o indicar en `GEMINI.md` que lea el Memory Bank. |
-| `cline/` | Extensión Cline (VS Code) | `memory-bank.md`, `README.md` | Copiar las instrucciones de `memory-bank.md` en las custom instructions o `.clinerules` y pedir “initialize memory bank”. |
+| `claude/` | Claude Code | `.claude/CLAUDE.md`, `.claude/settings.json`, `README.md` | Copiar `.claude/` al proyecto, abrir Claude Code e introducir `init memory`. |
+| `gemini/` | Gemini CLI | `.gemini/GEMINI.md`, `.gemini/settings.json`, `load-memory.toml`, `README.md` | Copiar `.gemini/` al proyecto y ejecutar `/load-memory` o indicar que lea `GEMINI.md`. |
+| `cline/` | Extensión Cline (VS Code) | `memory-bank.md`, `README.md` | Copiar las instrucciones de `memory-bank.md` en las custom instructions o `.clinerules` y pedir "initialize memory bank". |
 | `RooCode/` | Extensión RooCode (VS Code) | `.roo/`, `README.md` | Copiar la carpeta `.roo/`, instalar la extensión y en el chat ejecutar `init memory`. |
 | `cursor/` | Cursor IDE | `.cursor/`, `README.md` | Copiar `.cursor/` al proyecto, abrir el chat y ejecutar `init memory`. |
 | `.windsurf/` (raíz) | Motor común | Reglas core y workflows aplicados por defecto al proyecto | Se mantiene en el repositorio raíz como referencia y puede reutilizarse si se desea configurar Windsurf directamente desde aquí. |
@@ -32,12 +33,18 @@ Todos los asistentes comparten el mismo esquema de archivos, descrito en los `me
 Se pueden añadir archivos adicionales (API docs, estrategias de testing, etc.) dentro de `memory-bank/` según lo requiera el proyecto.
 
 ## Modos de trabajo y disciplina
-Las reglas base imponen dos modos: **Plan** (analizar, diseñar y validar estrategias) y **Act** (ejecutar cambios). Antes de actuar se debe:
+Todos los asistentes operan en **3 modos**:
+
+1. **PLAN** (por defecto) - Analizar, diseñar y validar estrategias sin hacer cambios
+2. **ACT** - Ejecutar cambios aprobados (activar escribiendo "ACT")
+3. **TUTOR** - Modo educativo paso a paso (activar escribiendo "TUTOR:" en el prompt)
+
+Antes de actuar se debe:
 1. Leer todos los archivos de `memory-bank/`.
 2. Elaborar un plan y conseguir la aprobación.
 3. Documentar los cambios y actualizar la memoria después de cada iteración.
 
-Esta disciplina garantiza trazabilidad y evita pérdida de contexto cuando el asistente “reinicia” su memoria entre sesiones.
+Esta disciplina garantiza trazabilidad y evita pérdida de contexto cuando el asistente "reinicia" su memoria entre sesiones.
 
 ## Estado actual y siguientes pasos
 - Este repositorio solo contiene las **plantillas** y reglas; los archivos `projectbrief.md`, `productContext.md`, etc. deben generarse dentro de cada proyecto que utilice el Memory Bank.
