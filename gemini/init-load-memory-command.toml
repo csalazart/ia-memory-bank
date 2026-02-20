@@ -4,7 +4,7 @@ tool = "write_file"
 [parameters]
     # La ruta de destino es dinámica, dentro del proyecto actual.
     # Asume que la carpeta .gemini/commands ya existe.
-    file_path = "{{project_root}}/.gemini/commands/load-memory.toml"
+    file_path = ".gemini/commands/load-memory.toml"
 
     # El contenido es el texto literal del comando que queremos clonar.
     content = '''
