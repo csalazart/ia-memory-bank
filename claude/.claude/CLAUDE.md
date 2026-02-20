@@ -112,6 +112,7 @@ User or I invoke with `/command`:
 ---
 
 ## Memory-Bank Integration
+user the file memory-bank.md to follow the creation of memory bank
 
 ### Memory-Bank Files (Read at start)
 1. `projectbrief.md` - Project objectives and scope
