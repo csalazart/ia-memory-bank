@@ -12,6 +12,7 @@ Este repositorio reúne plantillas e instrucciones para inicializar un **Memory 
 | `cline/` | Extensión Cline (VS Code) | `memory-bank.md`, `README.md` | Copiar las instrucciones de `memory-bank.md` en las custom instructions o `.clinerules` y pedir "initialize memory bank". |
 | `RooCode/` | Extensión RooCode (VS Code) | `.roo/`, `README.md` | Copiar la carpeta `.roo/`, instalar la extensión y en el chat ejecutar `init memory`. |
 | `cursor/` | Cursor IDE | `.cursor/`, `README.md` | Copiar `.cursor/` al proyecto, abrir el chat y ejecutar `init memory`. |
+| `others/` | IAs genéricas (Qwen, Kimi, ChatGPT, Mistral…) | `AGENTS.md`, `memory-bank.md`, `README.md` | Copiar `AGENTS.md` a la raíz del proyecto y decirle a la IA: `Read AGENTS.md and follow its instructions`. |
 | `_templates/` | Todos los asistentes | `activeContext.md`, `progress.md`, `plans-index.md` | Copiar los 3 archivos a `memory-bank/` del proyecto como punto de partida volátil. |
 
 ## Flujo general de uso

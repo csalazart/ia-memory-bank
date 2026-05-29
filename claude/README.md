@@ -11,10 +11,12 @@
 
 La carpeta `.claude/` contiene:
 - **CLAUDE.md** - Reglas de comportamiento, modos Plan/Act/Tutor, MCP servers y convenciones
+- **memory-bank.md** - Protocolo de Memory Bank: distribución Volatile/Stable, carga 3 niveles y update 3 pasos
 - **settings.json** - Configuración de MCP servers (context7, nuxt, nuxt-ui, postgres) y hooks de seguridad
 - **agents/** - Subagentes especializados (opcional, para proyectos complejos)
 - **skills/** - Skills reutilizables (opcional)
-- **commands/** - Slash commands personalizados (opcional)
+- **commands/load-memory.md** - Slash command `/load-memory` para cargar el memory-bank
+- **commands/update-memory.md** - Slash command `/update-memory` para actualizar el memory-bank al finalizar sesión
 
 ## Modos de operación
 
