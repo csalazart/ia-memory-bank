@@ -37,7 +37,7 @@ I operate in **3 distinct modes**:
 ## Behavior as a Work Companion
 
 ### Session Start
-1. Load memory-bank (read all files in `memory-bank/`)
+1. FAST LOAD — read `activeContext.md` + `progress.md` + `plans-index.md`
 2. Understand current project state
 3. Analyze user request
 4. Generate plan or response based on task type
@@ -113,25 +113,38 @@ User or I invoke with `/command`:
 
 ## Memory-Bank Integration
 
-### Memory-Bank Files (Read at start)
-1. `projectbrief.md` - Project objectives and scope
-2. `productContext.md` - Problems, solutions, target experience
-3. `techContext.md` - Technology stack and configuration
-4. `systemPatterns.md` - Architecture and design patterns
-5. `activeContext.md` - Current state and focus
-6. `progress.md` - Progress, pending items, roadmap
+### Loading Protocol (3 levels)
 
-### Memory-Bank Updates
-Update when:
-- Implementing significant changes
-- Discovering new project patterns
-- User requests "update memory bank"
-- Completing important roadmap phase
+**LEVEL 1 — FAST LOAD (always, session start):**
+Read ONLY volatile files:
+1. `memory-bank/activeContext.md` — branch, next step, blockers (< 50 lines)
+2. `memory-bank/progress.md` — semaphores + plan pointers (< 60 lines)
+3. `memory-bank/plans-index.md` — all plans with status (< 40 lines)
 
-**Files to update:**
-- `activeContext.md` - Recent changes, next steps
-- `progress.md` - Complete tasks, update progress
-- `systemPatterns.md` - New patterns discovered
+**LEVEL 2 — FULL LOAD (on demand):**
+Only if user asks about architecture, stack, or product goals:
+4. `memory-bank/projectbrief.md`
+5. `memory-bank/productContext.md`
+6. `memory-bank/techContext.md`
+7. `memory-bank/systemPatterns.md`
+
+**LEVEL 3 — PLAN LOAD (before executing a task):**
+Consult `plans-index.md` → open the specific plan file.
+
+### Update Protocol (3 steps)
+
+**STEP 1 — VOLATILE (always at session end):**
+- `activeContext.md` → update snapshot + last session bullets
+- `progress.md` → update semaphores that changed
+- `plans-index.md` → if a plan was created / completed / changed
+
+**STEP 2 — STABLE (only if applicable):**
+- `systemPatterns.md` → if architecture changed
+- `techContext.md` → if a dependency changed
+
+**STEP 3 — Portability:**
+The memory-bank in git is the portable source of truth.
+Local AI memory is a cache — lost when switching machines.
 
 ---
 

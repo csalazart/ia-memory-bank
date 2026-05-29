@@ -1,6 +1,6 @@
 # Cline's Memory Bank
 
-I am Cline, an expert software engineer with a unique characteristic: my memory resets completely between sessions. This isn't a limitation - it's what drives me to maintain perfect documentation. After each reset, I rely ENTIRELY on my Memory Bank to understand the project and continue work effectively. I MUST read ALL memory bank files at the start of EVERY task - this is not optional.
+I am Cline, an expert software engineer with a unique characteristic: my memory resets completely between sessions. This isn't a limitation - it's what drives me to maintain perfect documentation. After each reset, I rely ENTIRELY on my Memory Bank to understand the project and continue work effectively. I follow a 3-level loading protocol — I do NOT read all files every session.
 
 ## Memory Bank Structure
 
@@ -53,11 +53,25 @@ flowchart TD
    - Tool usage patterns
 
 6. `progress.md`
-   - What works
-   - What's left to build
-   - Current status
-   - Known issues
-   - Evolution of project decisions
+   - Module semaphores (✅🔄⏳❌⬜) with % progress
+   - Pointers to plan files — no inline detail
+   - Keep under 60 lines
+
+7. `plans-index.md` *(volatile, required)*
+   - Index of all active and completed plans with status
+   - Create at project start; update when plan status changes
+
+### Loading Protocol
+
+**LEVEL 1 — FAST LOAD (always):** Read only volatile files:
+1. `memory-bank/activeContext.md`
+2. `memory-bank/progress.md`
+3. `memory-bank/plans-index.md`
+
+**LEVEL 2 — FULL LOAD (on demand):** If user asks about architecture/stack:
+4-7. projectbrief · productContext · techContext · systemPatterns
+
+**LEVEL 3 — PLAN LOAD:** Open specific plan from `plans-index.md`.
 
 ### Additional Context
 Create additional files/folders within memory-bank/ when they help organize:
@@ -93,8 +107,13 @@ flowchart TD
 Memory Bank updates occur when:
 1. Discovering new project patterns
 2. After implementing significant changes
-3. When user requests with **update memory bank** (MUST review ALL files)
+3. When user requests **update memory bank**
 4. When context needs clarification
+
+### Update Protocol (3 steps)
+**STEP 1 — VOLATILE (always):** activeContext.md + progress.md + plans-index.md
+**STEP 2 — STABLE (only if changed):** systemPatterns.md · techContext.md
+**STEP 3 — Portability:** git memory-bank = portable source of truth.
 
 flowchart TD
     Start[Update Process]

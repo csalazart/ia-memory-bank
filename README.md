@@ -12,6 +12,7 @@ Este repositorio reúne plantillas e instrucciones para inicializar un **Memory 
 | `cline/` | Extensión Cline (VS Code) | `memory-bank.md`, `README.md` | Copiar las instrucciones de `memory-bank.md` en las custom instructions o `.clinerules` y pedir "initialize memory bank". |
 | `RooCode/` | Extensión RooCode (VS Code) | `.roo/`, `README.md` | Copiar la carpeta `.roo/`, instalar la extensión y en el chat ejecutar `init memory`. |
 | `cursor/` | Cursor IDE | `.cursor/`, `README.md` | Copiar `.cursor/` al proyecto, abrir el chat y ejecutar `init memory`. |
+| `_templates/` | Todos los asistentes | `activeContext.md`, `progress.md`, `plans-index.md` | Copiar los 3 archivos a `memory-bank/` del proyecto como punto de partida volátil. |
 
 ## Flujo general de uso
 1. **Clona o descarga** este repositorio junto con tu proyecto.
@@ -21,13 +22,18 @@ Este repositorio reúne plantillas e instrucciones para inicializar un **Memory 
 5. **Mantén sincronizados** los archivos del Memory Bank con el proyecto real: actualiza las secciones obligatorias antes de cada sesión y registra cambios relevantes.
 
 ## Estructura mínima del Memory Bank
-Todos los asistentes comparten el mismo esquema de archivos, descrito en los `memory-bank.md` específicos:
-- `projectbrief.md`: visión de alto nivel y metas.
-- `productContext.md`: propósito del producto, problemas a resolver y UX deseada.
-- `activeContext.md`: enfoque actual, decisiones recientes y siguientes pasos.
-- `systemPatterns.md`: arquitectura, patrones y dependencias críticas.
-- `techContext.md`: stack tecnológico, tooling y restricciones.
-- `progress.md`: estado actual, pendientes y problemas conocidos.
+Todos los asistentes comparten el mismo esquema. Los archivos se dividen en dos categorías:
+
+**🔴 Archivos VOLÁTILES — leer SIEMPRE al inicio (máx 60 líneas c/u):**
+- `activeContext.md` — snapshot: rama activa, siguiente paso, bloqueantes, resumen última sesión.
+- `progress.md` — semáforos de módulos (✅🔄⏳❌⬜) + punteros a planes. Sin detalle inline.
+- `plans-index.md` — índice de todos los planes con estado y referencia al fichero.
+
+**🟢 Archivos ESTABLES — leer solo bajo demanda:**
+- `projectbrief.md` — visión de alto nivel y metas.
+- `productContext.md` — propósito del producto, problemas a resolver y UX deseada.
+- `systemPatterns.md` — arquitectura, patrones y dependencias críticas.
+- `techContext.md` — stack tecnológico, tooling y restricciones.
 
 Se pueden añadir archivos adicionales (API docs, estrategias de testing, etc.) dentro de `memory-bank/` según lo requiera el proyecto.
 
@@ -39,9 +45,13 @@ Todos los asistentes operan en **3 modos**:
 3. **TUTOR** - Modo educativo paso a paso (activar escribiendo "TUTOR:" en el prompt)
 
 Antes de actuar se debe:
-1. Leer todos los archivos de `memory-bank/`.
-2. Elaborar un plan y conseguir la aprobación.
-3. Documentar los cambios y actualizar la memoria después de cada iteración.
+1. **Carga rápida** — leer los 3 archivos volátiles:
+   `activeContext.md` + `progress.md` + `plans-index.md` (~150 líneas, siempre)
+2. **Carga completa** (solo bajo demanda) — si el usuario pregunta sobre arquitectura o stack:
+   `projectbrief.md` + `productContext.md` + `techContext.md` + `systemPatterns.md`
+3. **Carga de plan** — abrir el plan específico desde `plans-index.md` antes de ejecutar.
+4. Elaborar un plan y conseguir la aprobación del usuario.
+5. Al terminar: actualizar **siempre** `activeContext.md` + `progress.md` + `plans-index.md`.
 
 Esta disciplina garantiza trazabilidad y evita pérdida de contexto cuando el asistente "reinicia" su memoria entre sesiones.
 

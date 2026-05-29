@@ -147,18 +147,24 @@ memory_bank_strategy:
 
       *
   if_memory_bank_exists: |
-        **READ *ALL* MEMORY BANK FILES**
+        **3-LEVEL LOADING PROTOCOL**
         <thinking>
-        I will read all memory bank files, one at a time.
+        I use a tiered loading approach — not all files every session.
         </thinking>
-        Plan: Read all mandatory files sequentially.
-        1. Read `productContext.md`
-        2. Read `activeContext.md` 
-        3. Read `systemPatterns.md` 
-        4. Read `decisionLog.md` 
-        5. Read `progress.md` 
-        6. Set status to [MEMORY BANK: ACTIVE] and inform user.
-        7. Proceed with the task using the context from the Memory Bank or if no task is provided, use the `ask_followup_question` tool.
+
+        LEVEL 1 — FAST LOAD (always):
+        1. Read `memory-bank/activeContext.md`   ← branch, next step, blockers
+        2. Read `memory-bank/progress.md`         ← semaphores + plan pointers
+        3. Read `memory-bank/plans-index.md`      ← all plans with status
+        4. Set status to [MEMORY BANK: ACTIVE] and inform user.
+        5. Proceed with task or use `ask_followup_question` if no task given.
+
+        LEVEL 2 — FULL LOAD (on demand, if user asks about architecture/stack):
+        Read additionally: `productContext.md`, `systemPatterns.md`,
+        `techContext.md`, `projectbrief.md`
+
+        LEVEL 3 — PLAN LOAD (before executing a specific task):
+        Open the specific plan file referenced in `plans-index.md`.
       
 general:
   status_prefix: "Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]', according to the current state of the Memory Bank."
@@ -206,6 +212,14 @@ memory_bank_updates:
         Use insert_content to *append* the new entry, never overwrite existing entries. Always include a timestamp.
         </thinking>
       format: "[YYYY-MM-DD HH:MM:SS] - [Summary of Change/Focus/Issue]"
+  plans-index.md:
+    trigger: "When a plan is created, completed, or changes status. Use your judgement."
+    action: |
+      <thinking>
+      I need to update plans-index.md with the new plan status.
+      Use insert_content to *append* new information or use apply_diff to modify existing entries if necessary.
+      </thinking>
+    format: "[YYYY-MM-DD HH:MM:SS] - [Plan name] → [new status]"
 
 umb:
   trigger: "^(Update Memory Bank|UMB)$"

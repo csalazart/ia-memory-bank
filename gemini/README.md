@@ -12,7 +12,8 @@
 La carpeta `.gemini/` contiene:
 - **GEMINI.md** - Reglas de comportamiento, modos Plan/Act/Tutor, MCP servers y convenciones
 - **settings.json** - Configuración de MCP servers (context7, nuxt) y preferencias globales
-- **commands/** - Slash commands personalizados (opcional)
+- **commands/load-memory.md** - Slash command `/load-memory` para cargar el memory-bank
+- **commands/update-memory.md** - Slash command `/update-memory` para actualizar el memory-bank al finalizar sesión
 
 ## Modos de operación
 
@@ -44,7 +45,7 @@ La carpeta `.gemini/` contiene:
 - **GEMINI.md** - Configuración principal y reglas de comportamiento
 - **settings.json** - MCP servers y configuración de IDE
 - **load-memory.toml** - Comando para cargar memory-bank (opcional)
-- **init-load-memory-command.toml** - Comando de inicialización (opcional)
+- **init-command-load-memory.toml** - Comando de inicialización (opcional)
 - **memory-bank.md** - Documentación del Memory Bank (ver archivo separado)
 
 ## Documentación completa

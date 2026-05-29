@@ -70,25 +70,35 @@ Act as a senior developer in **Tutor Mode**. Your goal is to guide the user step
 
 ## Memory Bank Integration
 
-### Archivos del Memory-Bank (Leer al inicio)
-1. `projectbrief.md` - Objetivos y alcance del proyecto
-2. `productContext.md` - Problemas, soluciones, experiencia objetivo
-3. `techContext.md` - Stack tecnológico y configuración
-4. `systemPatterns.md` - Arquitectura y patrones de diseño
-5. `activeContext.md` - Estado actual y enfoque
-6. `progress.md` - Progreso, pendientes, roadmap
+### Protocolo de carga (3 niveles)
 
-### Actualización del Memory-Bank
-Actualizo cuando:
-- Implemento cambios significativos
-- Descubro nuevos patrones del proyecto
-- Usuario solicita "update memory bank"
-- Completo una fase importante del roadmap
+**NIVEL 1 — CARGA RÁPIDA (siempre, inicio de sesión):**
+Leer SOLO los archivos volátiles:
+1. `memory-bank/activeContext.md` — rama, próximo paso, bloqueos
+2. `memory-bank/progress.md` — semáforos + punteros a planes
+3. `memory-bank/plans-index.md` — índice de planes con estado
 
-**Archivos a actualizar:**
-- `activeContext.md` - Cambios recientes, próximos pasos
-- `progress.md` - Completar tareas, actualizar progreso
-- `systemPatterns.md` - Nuevos patrones descubiertos
+**NIVEL 2 — CARGA COMPLETA (bajo demanda):**
+Solo si el usuario pregunta sobre arquitectura, stack u objetivos:
+4-7. projectbrief · productContext · techContext · systemPatterns
+
+**NIVEL 3 — CARGA DE PLAN:**
+Consultar `plans-index.md` → abrir el plan específico de la tarea.
+
+### Protocolo de actualización (3 pasos)
+
+**PASO 1 — VOLÁTILES (siempre al terminar sesión):**
+- `activeContext.md` → snapshot actualizado + bullets de la sesión
+- `progress.md` → semáforos que cambiaron
+- `plans-index.md` → si cambió estado de algún plan
+
+**PASO 2 — ESTABLES (solo si aplica):**
+- `systemPatterns.md` → si cambió arquitectura
+- `techContext.md` → si cambió una dependencia
+
+**PASO 3 — Portabilidad:**
+El memory-bank en git es la fuente de verdad portable.
+La memoria local de la IA es caché — se pierde al cambiar de máquina.
 
 ---
 
