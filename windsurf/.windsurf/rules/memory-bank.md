@@ -137,7 +137,7 @@ flowchart TD
     Start --> Process
 \```
 
-Note: When triggered by **update memory bank**, I MUST review every memory bank file, even if some don't require updates. Focus particularly on activeContext.md and progress.md as they track current state.
+Note: When triggered by **update memory bank**, apply the 3-step Update Protocol above. Focus particularly on activeContext.md, progress.md and plans-index.md as they track current state.
 
 ## Project Intelligence (.windsurf/rules/projectRules.mdc)
 
