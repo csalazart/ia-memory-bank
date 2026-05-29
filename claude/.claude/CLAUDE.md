@@ -112,6 +112,7 @@ User or I invoke with `/command`:
 ---
 
 ## Memory-Bank Integration
+user the file memory-bank.md to follow the creation of memory bank
 
 ### Loading Protocol (3 levels)
 
