@@ -30,9 +30,3 @@ Ver `.roo/rules-code/rules.md` para:
 - Comando UMB (Update Memory Bank) y sus acciones
 - Integración con distribución Volatile/Stable
 
-## Más información
-
-- [Memory Bank Multiplataforma](../README.md) - Guía general del repositorio
-- [Claude](../claude/) - Alternativa para Claude Code
-- [Cline](../cline/) - Alternativa para Cline
-- [Cursor](../cursor/) - Alternativa para Cursor IDE

@@ -3,17 +3,21 @@
 ## ¿Qué es este repositorio?
 Este repositorio reúne plantillas e instrucciones para inicializar un **Memory Bank** coherente en distintos asistentes de IA/IDE (Devin, Gemini CLI, Cline, RooCode, Cursor, etc.). El objetivo es copiar la carpeta correspondiente en cada proyecto, ejecutar el comando de inicialización indicado y trabajar con un set uniforme de reglas y contexto persistente.
 
+## Patrón canónico
+La carpeta **`others/`** es el **patrón de referencia** del repositorio: define el comportamiento, los modos de trabajo y el protocolo de Memory Bank en su forma genérica (`AGENTS.md` + `memory-bank.md`). El resto de carpetas (`claude/`, `gemini/`, `cline/`, `cursor/`, `RooCode/`, `devin/`) son **adaptaciones** de ese mismo patrón al formato nativo de cada plataforma. Ante cualquier duda o cambio de criterio, `others/` manda y las demás deben seguir sus mismos patrones.
+
+> Cada carpeta es **autónoma**: su `README.md` y sus archivos solo referencian rutas propias. La navegación entre plataformas vive aquí, en el índice raíz.
+
 ## Contenido por carpeta
-| Carpeta | Asistente / IDE | Archivos clave | Pasos básicos |
-| --- | --- | --- | --- |
-| `devin/` | Editor Devin | `.devin/rules/core.md`, `.devin/rules/memory-bank.md`, `README.md` | Copiar `.devin/` al proyecto, abrir el chat e introducir `init memory`. |
-| `claude/` | Claude Code | `.claude/CLAUDE.md`, `.claude/settings.json`, `README.md` | Copiar `.claude/` al proyecto, abrir Claude Code e introducir `init memory`. |
-| `gemini/` | Gemini CLI | `.gemini/GEMINI.md`, `.gemini/settings.json`, `load-memory.toml`, `README.md` | Copiar `.gemini/` al proyecto y ejecutar `/load-memory` o indicar que lea `GEMINI.md`. |
-| `cline/` | Extensión Cline (VS Code) | `memory-bank.md`, `README.md` | Copiar las instrucciones de `memory-bank.md` en las custom instructions o `.clinerules` y pedir "initialize memory bank". |
-| `RooCode/` | Extensión RooCode (VS Code) | `.roo/`, `README.md` | Copiar la carpeta `.roo/`, instalar la extensión y en el chat ejecutar `init memory`. |
-| `cursor/` | Cursor IDE | `.cursor/`, `README.md` | Copiar `.cursor/` al proyecto, abrir el chat y ejecutar `init memory`. |
-| `others/` | IAs genéricas (Qwen, Kimi, ChatGPT, Mistral…) | `AGENTS.md`, `memory-bank.md`, `README.md` | Copiar `AGENTS.md` a la raíz del proyecto y decirle a la IA: `Read AGENTS.md and follow its instructions`. |
-| `_templates/` | Todos los asistentes | `activeContext.md`, `progress.md`, `plans-index.md` | Copiar los 3 archivos a `memory-bank/` del proyecto como punto de partida volátil. |
+| Carpeta | Asistente / IDE | Rol | Archivos clave | Pasos básicos |
+| --- | --- | --- | --- | --- |
+| `others/` | IAs genéricas (Qwen, Kimi, ChatGPT, Mistral…) | 🧩 **Patrón canónico** | `AGENTS.md`, `memory-bank.md`, `README.md` | Copiar `AGENTS.md` a la raíz del proyecto y decirle a la IA: `Read AGENTS.md and follow its instructions`. |
+| `claude/` | Claude Code | Adaptación | `.claude/CLAUDE.md`, `.claude/settings.json`, `README.md` | Copiar `.claude/` al proyecto, abrir Claude Code e introducir `init memory`. |
+| `gemini/` | Gemini CLI | Adaptación | `.gemini/GEMINI.md`, `.gemini/settings.json`, `load-memory.toml`, `README.md` | Copiar `.gemini/` al proyecto y ejecutar `/load-memory` o indicar que lea `GEMINI.md`. |
+| `cline/` | Extensión Cline (VS Code) | Adaptación | `memory-bank.md`, `README.md` | Copiar las instrucciones de `memory-bank.md` en las custom instructions o `.clinerules` y pedir "initialize memory bank". |
+| `RooCode/` | Extensión RooCode (VS Code) | Adaptación | `.roo/`, `README.md` | Copiar la carpeta `.roo/`, instalar la extensión y en el chat ejecutar `init memory`. |
+| `cursor/` | Cursor IDE | Adaptación | `.cursor/`, `README.md` | Copiar `.cursor/` al proyecto, abrir el chat y ejecutar `init memory`. |
+| `devin/` | Editor Devin | Adaptación | `.devin/rules/core.md`, `.devin/rules/memory-bank.md`, `README.md` | Copiar `.devin/` al proyecto, abrir el chat e introducir `init memory`. |
 
 ## Flujo general de uso
 1. **Clona o descarga** este repositorio junto con tu proyecto.

@@ -1,5 +1,7 @@
 # Instructions - Generic AI Assistants
 
+> 🧩 **Patrón canónico del repositorio.** Esta carpeta define el comportamiento, los modos de trabajo y el protocolo de Memory Bank en su forma genérica. Las demás carpetas (`claude/`, `gemini/`, `cline/`, `cursor/`, `RooCode/`, `devin/`) son adaptaciones de este mismo patrón al formato nativo de cada plataforma.
+
 Para IAs que usan `AGENTS.md` como estándar de configuración: Qwen, Kimi, ChatGPT, Mistral, DeepSeek, Llama, y cualquier otro asistente sin carpeta de configuración propia.
 
 ## Configuración rápida
@@ -50,9 +52,3 @@ Ver `memory-bank.md` para:
 - Estructura completa del memory-bank
 - Protocolo de carga y actualización detallado
 
-## Más información
-
-- [Memory Bank Multiplataforma](../README.md) — Guía general del repositorio
-- [Claude](../claude/) — Para Claude Code (slash commands, `.claude/`)
-- [Gemini](../gemini/) — Para Gemini CLI (slash commands, `.gemini/`)
-- [Cline](../cline/) — Para Cline en VS Code

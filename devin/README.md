@@ -28,9 +28,3 @@ Ver `rules/memory-bank.md` en la carpeta `.devin/` para:
 - Project Intelligence (projectRules.md)
 - Protocolo de carga y actualización detallado
 
-## Más información
-
-- [Memory Bank Multiplataforma](../README.md) - Guía general del repositorio
-- [Claude](../claude/) - Alternativa para Claude Code
-- [Gemini](../gemini/) - Alternativa para Gemini CLI
-- [Cline](../cline/) - Alternativa para VS Code

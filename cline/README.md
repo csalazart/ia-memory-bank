@@ -34,9 +34,3 @@ Ver `memory-bank.md` para:
 - Integración con Memory-Bank (estructura, carga y update)
 - Convenciones del proyecto y reglas críticas
 
-## Más información
-
-- [Memory Bank Multiplataforma](../README.md) - Guía general del repositorio
-- [Claude](../claude/) - Alternativa para Claude Code
-- [Windsurf](../windsurf/) - Alternativa para Windsurf IDE
-- [RooCode](../RooCode/) - Alternativa para RooCode

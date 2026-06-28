@@ -128,11 +128,11 @@ flowchart TD
     subgraph Learn [Learning Process]
         D1[Identify Pattern]
         D2[Validate with User]
-        D3[Document in .windsurf/rules/projectRules.md]
+        D3[Document in projectRules.md]
     end
     
     subgraph Apply [Usage]
-        A1[Read .windsurf/rules/projectRules.md]
+        A1[Read projectRules.md]
         A2[Apply Learned Patterns]
         A3[Improve Future Work]
     end

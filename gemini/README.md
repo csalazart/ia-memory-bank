@@ -57,9 +57,4 @@ Ver `GEMINI.md` en la carpeta `.gemini/` para:
 - Convenciones del proyecto
 - Reglas críticas
 
-## Más información
 
-- [Memory Bank Multiplataforma](../README.md) - Guía general del repositorio
-- [Claude](../claude/) - Alternativa para Claude Code
-- [Windsurf](../windsurf/) - Alternativa para Windsurf IDE
-- [Cline](../cline/) - Alternativa para VS Code

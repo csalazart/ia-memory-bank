@@ -33,8 +33,4 @@ Ver `CLAUDE.md` en la carpeta `.claude/` para:
 - Convenciones del proyecto
 - Reglas críticas
 
-## Más información
 
-- [Memory Bank Multiplataforma](../README.md) - Guía general del repositorio
-- [Cline](../cline/) - Alternativa para VS Code
-- [Windsurf](../windsurf/) - Alternativa para Windsurf IDE

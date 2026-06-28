@@ -28,9 +28,4 @@ Ver `rules/memory-bank.mdc` en la carpeta `.cursor/` para:
 - Integración con Memory-Bank y distribución Volatile/Stable
 - Convenciones del proyecto y reglas críticas
 
-## Más información
 
-- [Memory Bank Multiplataforma](../README.md) - Guía general del repositorio
-- [Claude](../claude/) - Alternativa para Claude Code
-- [Windsurf](../windsurf/) - Alternativa para Windsurf IDE
-- [Cline](../cline/) - Alternativa para VS Code
