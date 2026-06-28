@@ -1,12 +1,12 @@
 # Memory Bank Multiplataforma
 
 ## ¿Qué es este repositorio?
-Este repositorio reúne plantillas e instrucciones para inicializar un **Memory Bank** coherente en distintos asistentes de IA/IDE (Windsurf, Gemini CLI, Cline, RooCode, Cursor, etc.). El objetivo es copiar la carpeta correspondiente en cada proyecto, ejecutar el comando de inicialización indicado y trabajar con un set uniforme de reglas y contexto persistente.
+Este repositorio reúne plantillas e instrucciones para inicializar un **Memory Bank** coherente en distintos asistentes de IA/IDE (Devin, Gemini CLI, Cline, RooCode, Cursor, etc.). El objetivo es copiar la carpeta correspondiente en cada proyecto, ejecutar el comando de inicialización indicado y trabajar con un set uniforme de reglas y contexto persistente.
 
 ## Contenido por carpeta
 | Carpeta | Asistente / IDE | Archivos clave | Pasos básicos |
 | --- | --- | --- | --- |
-| `windsurf/` | Editor Windsurf | `.windsurf/rules/core.md`, `.windsurf/rules/memory-bank.md`, `README.md` | Copiar `.windsurf/` al proyecto, abrir el chat e introducir `init memory`. |
+| `devin/` | Editor Devin | `.devin/rules/core.md`, `.devin/rules/memory-bank.md`, `README.md` | Copiar `.devin/` al proyecto, abrir el chat e introducir `init memory`. |
 | `claude/` | Claude Code | `.claude/CLAUDE.md`, `.claude/settings.json`, `README.md` | Copiar `.claude/` al proyecto, abrir Claude Code e introducir `init memory`. |
 | `gemini/` | Gemini CLI | `.gemini/GEMINI.md`, `.gemini/settings.json`, `load-memory.toml`, `README.md` | Copiar `.gemini/` al proyecto y ejecutar `/load-memory` o indicar que lea `GEMINI.md`. |
 | `cline/` | Extensión Cline (VS Code) | `memory-bank.md`, `README.md` | Copiar las instrucciones de `memory-bank.md` en las custom instructions o `.clinerules` y pedir "initialize memory bank". |
@@ -18,7 +18,7 @@ Este repositorio reúne plantillas e instrucciones para inicializar un **Memory 
 ## Flujo general de uso
 1. **Clona o descarga** este repositorio junto con tu proyecto.
 2. **Elige la carpeta** que corresponde al asistente/IDE con el que vayas a trabajar.
-3. **Copia la carpeta oculta** (`.windsurf`, `.roo`, `.cursor`, `.gemini`, etc.) al directorio raíz del proyecto que quieres documentar.
+3. **Copia la carpeta oculta** (`.devin`, `.roo`, `.cursor`, `.gemini`, etc.) al directorio raíz del proyecto que quieres documentar.
 4. **Sigue las instrucciones del README local** (por ejemplo, ejecutar `init memory` o `/load-memory`).
 5. **Mantén sincronizados** los archivos del Memory Bank con el proyecto real: actualiza las secciones obligatorias antes de cada sesión y registra cambios relevantes.
 
